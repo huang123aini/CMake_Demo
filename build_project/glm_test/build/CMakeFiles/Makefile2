@@ -54,10 +54,10 @@ RM = /usr/local/Cellar/cmake/3.20.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/huangshiping/Desktop/glm_test
+CMAKE_SOURCE_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/huangshiping/Desktop/glm_test/build
+CMAKE_BINARY_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,7 +80,7 @@ clean: glm/clean
 # Directory level rules for directory glm
 
 # Recursive "all" directory target.
-glm/all:
+glm/all: glm/CMakeFiles/glm_static.dir/all
 .PHONY : glm/all
 
 # Recursive "preinstall" directory target.
@@ -88,7 +88,7 @@ glm/preinstall:
 .PHONY : glm/preinstall
 
 # Recursive "clean" directory target.
-glm/clean:
+glm/clean: glm/CMakeFiles/glm_static.dir/clean
 .PHONY : glm/clean
 
 #=============================================================================
@@ -98,14 +98,14 @@ glm/clean:
 CMakeFiles/glm_test.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glm_test.dir/build.make CMakeFiles/glm_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glm_test.dir/build.make CMakeFiles/glm_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/huangshiping/Desktop/glm_test/build/CMakeFiles --progress-num=1,2 "Built target glm_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles --progress-num=3,4 "Built target glm_test"
 .PHONY : CMakeFiles/glm_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/glm_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/glm_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 0
 .PHONY : CMakeFiles/glm_test.dir/rule
 
 # Convenience name for target.
@@ -116,6 +116,32 @@ glm_test: CMakeFiles/glm_test.dir/rule
 CMakeFiles/glm_test.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glm_test.dir/build.make CMakeFiles/glm_test.dir/clean
 .PHONY : CMakeFiles/glm_test.dir/clean
+
+#=============================================================================
+# Target rules for target glm/CMakeFiles/glm_static.dir
+
+# All Build rule for target.
+glm/CMakeFiles/glm_static.dir/all:
+	$(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/depend
+	$(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles --progress-num=1,2 "Built target glm_static"
+.PHONY : glm/CMakeFiles/glm_static.dir/all
+
+# Build rule for subdir invocation for target.
+glm/CMakeFiles/glm_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/CMakeFiles/glm_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 0
+.PHONY : glm/CMakeFiles/glm_static.dir/rule
+
+# Convenience name for target.
+glm_static: glm/CMakeFiles/glm_static.dir/rule
+.PHONY : glm_static
+
+# clean rule for target.
+glm/CMakeFiles/glm_static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/clean
+.PHONY : glm/CMakeFiles/glm_static.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

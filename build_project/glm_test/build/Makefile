@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.20.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/huangshiping/Desktop/glm_test
+CMAKE_SOURCE_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/huangshiping/Desktop/glm_test/build
+CMAKE_BINARY_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles /Users/huangshiping/Desktop/glm_test/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -174,6 +174,19 @@ glm_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/glm_test.dir/build.make CMakeFiles/glm_test.dir/build
 .PHONY : glm_test/fast
 
+#=============================================================================
+# Target rules for targets named glm_static
+
+# Build rule for target.
+glm_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm_static
+.PHONY : glm_static
+
+# fast build rule for target.
+glm_static/fast:
+	$(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/build
+.PHONY : glm_static/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -210,6 +223,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... glm_static"
 	@echo "... glm_test"
 	@echo "... main.o"
 	@echo "... main.i"

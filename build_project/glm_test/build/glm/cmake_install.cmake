@@ -1,4 +1,4 @@
-# Install script for directory: /Users/huangshiping/Desktop/glm_test/glm
+# Install script for directory: /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

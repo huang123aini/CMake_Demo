@@ -4,6 +4,7 @@ set(PROJECT_NAME "glm_test")
 
 project (${PROJECT_NAME})
 
+#NOTE:手动修改了glm目录下的宏 SET(BUILD_STATIC_LIBS 1)
 
 add_subdirectory(glm)
 

@@ -124,4 +124,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/glm_test.dir/DependInfo.cmake"
+  "glm/CMakeFiles/glm_static.dir/DependInfo.cmake"
   )

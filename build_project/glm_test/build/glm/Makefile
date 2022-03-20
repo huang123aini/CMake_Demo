@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.20.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/huangshiping/Desktop/glm_test
+CMAKE_SOURCE_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/huangshiping/Desktop/glm_test/build
+CMAKE_BINARY_DIR = /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -76,6 +76,35 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/local/Cellar/cmake/3.20.3/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/Cellar/cmake/3.20.3/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/Cellar/cmake/3.20.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Only default component available"
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -101,45 +130,16 @@ install/fast: preinstall/fast
 	/usr/local/Cellar/cmake/3.20.3/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Only default component available"
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/Cellar/cmake/3.20.3/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/Cellar/cmake/3.20.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /Users/huangshiping/Desktop/glm_test/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles /Users/huangshiping/Desktop/glm_test/build/glm//CMakeFiles/progress.marks
-	cd /Users/huangshiping/Desktop/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Desktop/glm_test/build/CMakeFiles 0
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/glm//CMakeFiles/progress.marks
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/huangshiping/Desktop/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/clean
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,18 +148,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/huangshiping/Desktop/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/preinstall
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/huangshiping/Desktop/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/preinstall
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/huangshiping/Desktop/glm_test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+glm/CMakeFiles/glm_static.dir/rule:
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glm/CMakeFiles/glm_static.dir/rule
+.PHONY : glm/CMakeFiles/glm_static.dir/rule
+
+# Convenience name for target.
+glm_static: glm/CMakeFiles/glm_static.dir/rule
+.PHONY : glm_static
+
+# fast build rule for target.
+glm_static/fast:
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/build
+.PHONY : glm_static/fast
+
+detail/glm.o: detail/glm.cpp.o
+.PHONY : detail/glm.o
+
+# target to build an object file
+detail/glm.cpp.o:
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/detail/glm.cpp.o
+.PHONY : detail/glm.cpp.o
+
+detail/glm.i: detail/glm.cpp.i
+.PHONY : detail/glm.i
+
+# target to preprocess a source file
+detail/glm.cpp.i:
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/detail/glm.cpp.i
+.PHONY : detail/glm.cpp.i
+
+detail/glm.s: detail/glm.cpp.s
+.PHONY : detail/glm.s
+
+# target to generate assembly for a file
+detail/glm.cpp.s:
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(MAKE) $(MAKESILENT) -f glm/CMakeFiles/glm_static.dir/build.make glm/CMakeFiles/glm_static.dir/detail/glm.cpp.s
+.PHONY : detail/glm.cpp.s
 
 # Help Target
 help:
@@ -173,6 +211,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... glm_static"
+	@echo "... detail/glm.o"
+	@echo "... detail/glm.i"
+	@echo "... detail/glm.s"
 .PHONY : help
 
 
@@ -184,6 +226,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/huangshiping/Desktop/glm_test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

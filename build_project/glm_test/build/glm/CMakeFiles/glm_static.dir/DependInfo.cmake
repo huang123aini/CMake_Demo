@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/main.cpp" "CMakeFiles/glm_test.dir/main.cpp.o" "gcc" "CMakeFiles/glm_test.dir/main.cpp.o.d"
+  "/Users/huangshiping/Documents/GitHub/CMake_Demo/build_project/glm_test/glm/detail/glm.cpp" "glm/CMakeFiles/glm_static.dir/detail/glm.cpp.o" "gcc" "glm/CMakeFiles/glm_static.dir/detail/glm.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -53,6 +53,9 @@ target_include_directories(glm INTERFACE
 
 install(TARGETS glm EXPORT glm)
 
+#######NOTE########手动添加了编译选项
+SET(BUILD_STATIC_LIBS 1)
+
 if(BUILD_STATIC_LIBS)
 add_library(glm_static STATIC ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
 	${ROOT_SOURCE}    ${ROOT_INLINE}    ${ROOT_HEADER}
@@ -64,6 +67,7 @@ add_library(glm_static STATIC ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
 	target_link_libraries(glm_static PUBLIC glm)
 	add_library(glm::glm_static ALIAS glm_static)
 endif()
+  
 
 if(BUILD_SHARED_LIBS)
 add_library(glm_shared SHARED ${ROOT_TEXT} ${ROOT_MD} ${ROOT_NAT}
